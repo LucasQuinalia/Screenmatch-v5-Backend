@@ -174,7 +174,8 @@ public class Principal {
         var avaliacaoMin = leitura.nextDouble();
         System.out.println("Qual o número máximo de temporadas que a série pode possuir?");
         var maxTemporadas = leitura.nextInt();
-        List<Serie> seriesPorAvaliacaoETemporadas = repositorio.findByAvaliacaoGreaterThanEqualAndTotalTemporadasLessThanEqual(avaliacaoMin, maxTemporadas);
+        //List<Serie> seriesPorAvaliacaoETemporadas = repositorio.findByAvaliacaoGreaterThanEqualAndTotalTemporadasLessThanEqual(avaliacaoMin, maxTemporadas);
+        List<Serie> seriesPorAvaliacaoETemporadas = repositorio.seriesPorTemporadaEAvaliacao(avaliacaoMin, maxTemporadas);
         System.out.println("Séries que atendem aos requisitos de avaliação maior ou igual a " + avaliacaoMin + " e com o número de temporadas menor ou igual a " + maxTemporadas);
         seriesPorAvaliacaoETemporadas.forEach(s ->
                 System.out.println(s.getTitulo() + " avaliação: " + s.getAvaliacao() + ", temporadas: " + s.getTotalTemporadas()));
